@@ -61,7 +61,7 @@ v4 = [
 	['l', 'headgeard'],
 	['m', 'headgeare'],
 	['n', 'headgearf'],
-
+  ['o', 'headgear'],
 	['s', 'headgearfda'],
 	['t', 'headgearsd'],
 	['u', 'headgearfd'],

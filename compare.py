@@ -11,6 +11,8 @@ def add_ext(prefix,start_col):
 
 	return bucket
 
+
+bucket = []
 row = 0
 col = 0
 while row < len(v1):
@@ -18,11 +20,13 @@ while row < len(v1):
 	temp = []
 
 	temp.append(v1[row])
+	bucket.append(temp)
 #		temp.append(v1[row+1])
 	while True:
-		print(temp)
+		# print(temp)
 		r = add_ext(temp,row)
-		print(r)
+		# print(r)
+		bucket.append(r)
 		if not len(r): break
 		if (len(r[0]) + row) >= len(v1):
 			break
@@ -32,6 +36,9 @@ while row < len(v1):
 #		print('col',col)
 		temp.append(v1[col])
 
-	print('-------------len',len(temp))
+	# print('-------------len',len(temp))
 #	break
 	row += 1
+
+
+print(bucket)
