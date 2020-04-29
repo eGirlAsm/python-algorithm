@@ -99,7 +99,31 @@ def figure_matching_count(fixed_bucket, base_bucket, start_index):
     return bucket
 
 def calculate_three_more(bucket):
-    return 0
+    print('calculate more')
+    # for x in range(0,len(bucket)):
+    x = 0
+    result = 0
+    while x < (len(bucket) - 1):
+   
+        # print('threeeeeeee-------------->',x,bucket[x],len(bucket[x]))
+        # print(bucket[x])
+        # for y in range(x+1,len(bucket[x])):
+        #     mul = len(bucket[x-1]) -  y 
+        #     print('mul',mul)
+        for i in range(len(bucket[x])):
+            subtracted_list_len = len(bucket[x+1]) - (i+1)
+            print('sub',subtracted_list_len)
+            if (x + 2) < len(bucket):
+                subtracted_list_len = len(bucket[x+2]) - subtracted_list_len
+                print('final',subtracted_list_len,figure_count(subtracted_list_len))
+                result += figure_count(subtracted_list_len)
+                print('result',result)
+                
+            
+        
+        x += 1
+            
+    return result
 
 def calculate_bucket_ex(bucket):
     # bucket.reverse()
@@ -109,7 +133,7 @@ def calculate_bucket_ex(bucket):
         result = calculate_three_more(bucket)
     else:
         for x in range(0,len(bucket)):
-            print("calc bucket ",bucket[x],x)
+            # print("calc bucket ",bucket[x],x)
             if (x+1) < len(bucket):
                 for y in range(0, len(bucket[x])):
                     f_r = figure_count(len(bucket[x-1]) - (y+1))
