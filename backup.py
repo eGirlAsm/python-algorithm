@@ -1,3 +1,5 @@
+import collections
+
 def replace(all_matched, clothes, bucket, baseIndex):
 	for x in range(baseIndex+1, len(clothes)):
 		copy = bucket.copy()
@@ -9,7 +11,7 @@ def replace(all_matched, clothes, bucket, baseIndex):
 				replace(all_matched, clothes, copy, x)
 		copy.clear()
 
-def solution(clothes):
+def solution1(clothes):
 	bucket = []
 	all_matched = []
 	answer = 0
@@ -17,16 +19,62 @@ def solution(clothes):
 	for x in range(0, len(clothes)):
 		bucket.append(clothes[x])
 		clothes_names = [item[0] for item in bucket]
+		print('clothes_name > ', clothes_names)
 		all_matched.append(clothes_names)
 		replace(all_matched, clothes, bucket, x)
 		bucket.clear()
 	answer = len(all_matched)
-	
-	
+
+
 	for x in all_matched:
 		print(' + '.join(x))
-	
+
 	all_matched.clear()
+	return answer
+
+# bucket
+# #1 name, type,
+
+def solution2(clothes):
+	bucket = []
+	all_matched = []
+	answer = 0
+	clothes = sorted(clothes)
+	for item in clothes:
+		bucket.append(item)
+		# print(item)
+	# print(clothes)
+
+	print(bucket)
+
+
+def solution(clothes):
+	bucket = []
+	bucket2 = []
+	all_matched = []
+	answer = 0
+	clothes = sorted(clothes)
+	for x in range(0, len(clothes)):
+
+		bucket.append(hash(':'.join(clothes[x])))
+		# bucket.clear()
+	# answer = len(all_matched)
+
+	cc = 0
+	for x in bucket:
+		for y in bucket:
+			cc = cc+1
+
+
+
+	c = collections.Counter(bucket)
+	print(bucket)
+	print('method2 > ' , len(bucket))
+	print('methodlla > ',cc)
+	# for x in all_matched:
+	# 	print(' + '.join(x))
+	#
+	# all_matched.clear()
 	return answer
 
 v3 = [
@@ -70,6 +118,7 @@ v4 = [
 	['x', 'headgearaaa'],
 
 	['zb', 'headgearsdsd'],	]
+print('result = ' + str(solution2(v3)))
 
-print('result = ' + str(solution(v4)))
+# print('result = ' + str(solution(v3)))
 # 2^len(7) - 1

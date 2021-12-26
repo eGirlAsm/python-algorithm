@@ -54,7 +54,7 @@ def solution(clothes):
 #	for x in all_matched:
 #		print(' + '.join(x))
 	
-	all_matched.clear()
+	# all_matched.clear()
 	return answer
 
 

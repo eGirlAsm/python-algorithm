@@ -277,4 +277,4 @@ def solution(clothes):
 #   print('result = ' +  str(solution(v3)))
 #   print('result = ' +  str(solution(v4)))
 
-print('total matched = ' + str(solution(v4)))
+print('total matched = ' + str(solution(v3)))

@@ -1,7 +1,11 @@
 
 v1 = [["yellow_hat", "headgear"], ["blue_sunglasses", "eyewear"], ["green_turban", "headgear"]]
 v2 = [["crow_mask", "face"], ["blue_sunglasses", "face"], ["smoky_makeup", "face"]]
-v3 = [["a", "eye"], ["b", "face"], ["c", "face"],["d", "face2"],["e","face3"],["f","face4"]]
+v3 = [["a", "eye"],  ["e", "face1"], ["f", "face2"], ["g", "face3"]]
+
+v4 = [["a", "eye"], ["b", "face"], ["c", "leg"], ["d", "headgear"],
+      ["e", "headgear"], ["f", "leg"], ["g", "face"], ["h", "face"]]
+
 def add(all_matched, clothes, bucket, baseIndex):
 	copy = bucket.copy()
 	for x in range(baseIndex+1,len(clothes)):
@@ -47,4 +51,4 @@ def solution(clothes):
 	
 #print('result = ' +  str(solution(v1)))
 #print('result = ' +  str(solution(v2)))
-print('result = ' +  str(solution(v3)))
+print('result = ' +  str(solution(v4)))
